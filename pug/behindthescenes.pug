@@ -1,0 +1,40 @@
+- var page = { title: "Words Gone Wild", subtitle: "Buchstabenlinien in Freier Wildbahn", author: "Myriam Frisano | halfapx.com", description: "Ein Fotographie und Lettering Projekt."}
+
+include pics.pug
+
+doctype html
+html(lang="de")
+    include includes/head.pug
+
+    body
+        header.header
+            .container
+                a(href="index.html")
+                    h1 Words Gone Wild
+        .wrapper
+            section.main_container
+                .container
+                    main
+                        h2.subtitle Buchstabenlinien in Freier Wildbahn
+                        .content
+                            h3 Behind the Scenes
+                            p Ein paar Worte über die Entstehung der Bilder und die verwendeten Mittel.
+                            h4 Kamera
+                            p Ich war schon lange begeistert von Makrofotogrpahie, allerdings kosten die meisten Makroobjektive ein Vermögen. Deswegen griff ich für die Bilder auf Zwischenringe zurück.
+                            p Zwischenringe sind einfache Zylinder, die zwischen Objektiv und Kamera verwendet werden. Sie vergrössern den Abstand zwischen Linse und Sensor und verringern somit den minimalen Fokusabstand des Objektivs. Da Zwischenringe kein zusätzliches Glas enthalten, bleibt die Bildqualität weitestgehend erhalten, allerdings muss man mit leichtem Lichtverlust rechnen.
+                            p Die Bilder wurden mit einer #[a(href="https://www.sony.ch/de/electronics/wechselobjektivkameras/ilce-7m2-body-kit" target="_blank") Sony Alpha 7 Mk. II] fotographiert und einem #[a(href="https://www.sony.ch/de/electronics/kamera-objektive/sel50f18" target="_blank") 50mm/1.8 Objektiv (APS-C)] sowie einem #[a(href="https://www.amazon.de/Meike-Automatic-Extension-Mount-NEX-5R/dp/B00BXZ9ALQ" target="_blank") 10mm Zwischenring]. Durch den Zwischenring war es möglich mit einer Vergrösserung von bis zu 1:2.9 zu fotographieren.
+                            h4 Bearbeitung
+                            p Die Bilder wurden mit Adobe Lightroom bearbeitet. Ich verzichtete bei der Bearbeitung auf meine eigenen Presets und habe die Bearbeitung jedes Mal komplett von Null durchgeführt. Ziel war es nicht möglichst natürlich zu bearbeiten, sondern eher in Richtung Color Grading zu arbeiten, um einen Look zu erzeugen.
+                            h4 Lettering
+                            p Das Lettering entstand auf einem #[a(href="http://www.apple.com/chde/ipad-pro/" target="_blank") iPad Pro 9.7 mit dem Apple Pencil] in der App #[a(href="http://procreate.si/" target="_blank") Procreate].
+                            p Die verwendeten Pinsel können #[a(href="http://halfapx.com/de/procreate-brushes/") auf meiner Website] heruntergeladen werden.
+                            h4 Tutorial
+                            p Ich habe vor einer Weile ein kleines Tutorial zum #[a(href="https://www.instagram.com/explore/tags/wrappingtexteffect/" target="_blank") #wrappingtexteffect] (hinter dem Link verbergen sich noch mehr Beispiele) erstellt. Es ist zwar auf Englisch, sollte allerdings auch ohne Text grundsätzlich verständlich werden.
+                            .video
+                                iframe(src="https://www.youtube.com/embed/kfvzWXnNmgw")
+
+
+        include includes/footer.pug
+
+    // body end
+// html end

@@ -1,0 +1,32 @@
+- var page = { title: "Words Gone Wild", subtitle: "Buchstabenlinien in Freier Wildbahn", author: "Myriam Frisano | halfapx.com", description: "Ein Fotographie und Lettering Projekt."}
+
+include pics.pug
+
+doctype html
+html(lang="de")
+    include includes/head.pug
+
+    body
+        header.header
+            .container
+                h1 Words Gone Wild
+        .wrapper
+            section.main_container
+                .container
+                    main
+                        h2.subtitle Buchstabenlinien in Freier Wildbahn
+                        .content
+                            p Klicke auf die Bilder um diese grösser zu sehen, und auf den Link darunter, um die Entstehung des Bildes mitzuverfolgen.
+                            p Wenn du mehr über die Entstehung der Bilder erfahren möchtest #[a(href="behindthescenes.html") klicke hier]
+                            .bigger
+                                .box
+                                    each pic in pictures
+                                        .mix
+                                            span.image-lightbox(data-olbox-a="img/" + pic.img + ".jpg")
+                                                img(src="img/" + pic.img + ".jpg" alt=pic.name)
+                                            if(pic.vid != '')
+                                                span.video-lightbox(data-olbox-b=pic.vid) Prozessvideo
+        include includes/footer.pug
+
+    // body end
+// html end

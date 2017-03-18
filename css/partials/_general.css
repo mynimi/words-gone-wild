@@ -1,0 +1,11 @@
+blockquote { font-size: 1.2em; width: 95%; margin: 20px auto; text-align: center; font-family: 'Vollkorn', 'Times New Roman', serif; font-style: italic; }
+
+blockquote cite { font-style: normal; font-size: .8em; opacity: .8; text-align: right; width: 100%; display: block; }
+
+.hidden { display: none; }
+
+.btn { border: 2px solid currentColor; padding: 3px 5px; border-radius: 3px; position: relative; top: 12px; line-height: 2; }
+
+p + h1, p + h2, p + h3, p + h4 { margin-top: 20px; }
+
+.lightbox-nav { position: fixed; top: 30px; z-index: 300; }

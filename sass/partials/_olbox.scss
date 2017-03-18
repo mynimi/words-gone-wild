@@ -1,0 +1,170 @@
+/*! Olbox Styles (created by Myriam Frisano @ http://halfapx.com) */
+
+// Use Autoprefixer to Generate or add Prefixes Manually
+
+// Overwrite Variables
+// place your adjustments here, just copy and remove the !default flag, to overwrite without losing the original value
+
+
+// Defaults
+$olbox-shadow-color: rgba(black, 0.4) !default;
+$min-z-index: 99 !default;
+$iframe-width: 70% !default;
+$image-max-width: 90% !default;
+$image-max-height: 80% !default;
+$nav-arrow-size: 50px !default;
+$nav-arrow-color: white !default;
+$nav-arrow-color-hover: black !default;
+$nav-arrow-thickness-default: 10px !default;
+$nav-arrow-thicknes-break: 600px !default;
+$nav-arrow-thickness-after-break: 5px !default;
+$olbox-loader-color: white !default;
+
+// used to darken/lighten the background
+.olbox-shadow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $olbox-shadow-color;
+    z-index: $min-z-index;
+}
+
+// area to be placed on top of the olbox-shadow,
+// behind the lightbox elements, trigger the lightbox to close.
+.olbox-open{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $min-z-index+1 !important;
+}
+
+// media container
+.olbox-media{
+    position: fixed;
+    z-index: $min-z-index+3;
+    &.iframe{
+        width: $iframe-width;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: $min-z-index+2;
+        transition: .3s all ease;
+    }
+}
+
+// Image container
+.olbox-img{
+    max-width: $image-max-width;
+    max-height: $image-max-height;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: $min-z-index+2;
+    transition: .3s all ease;
+}
+
+// navigation arrows
+.olbox-prev{
+    left: 20px;
+    border-left: $nav-arrow-thickness-default solid $nav-arrow-color;
+    border-bottom: $nav-arrow-thickness-default solid $nav-arrow-color;
+}
+
+.olbox-next{
+    right: 20px;
+    border-right: $nav-arrow-thickness-default solid $nav-arrow-color;
+    border-top: $nav-arrow-thickness-default solid $nav-arrow-color;
+}
+
+.olbox-nav{
+    position: fixed;
+    z-index: $min-z-index+3;
+    width: $nav-arrow-size;
+    height: $nav-arrow-size;
+    transform: translateY(-50%) rotate(45deg);
+    top: 50%;
+    cursor: pointer;
+    transition: .3s all ease;
+    font-size: 0;
+
+    @media screen and (max-width: $nav-arrow-thicknes-break) {
+        border-width: $nav-arrow-thickness-after-break;
+    }
+
+    &:hover{
+        border-color: $nav-arrow-color-hover;
+    }
+}
+
+// padding hack (aspect ratio is set within js)
+.olbox-iframe-wrapper {
+    position: relative;
+    height: 0;
+    display: block;
+
+    iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: $min-z-index+6 !important;
+    }
+}
+
+// loading animation
+.olbox-loader {
+  color: $olbox-loader-color;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: fixed;
+  z-index: $min-z-index+1;
+  top: calc(50% - .5em);
+  left: calc(50% - .5em);
+  transform: translateZ(0);
+  animation: olbox-loader-bullets 1.7s infinite ease, olbox-loader-round 1.7s infinite ease;
+}
+
+@keyframes olbox-loader-bullets {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+
+@keyframes olbox-loader-round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
